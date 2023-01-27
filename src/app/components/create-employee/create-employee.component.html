@@ -1,0 +1,37 @@
+<h1 class="mx-auto" style=width:200px;> Create An Employee</h1>
+
+<form #form="ngForm">
+    <div class="form-group row">
+        <label for="title" class="col-form-label">Firstname</label>
+        <input ngModel #firstname="ngModel" name="firstname" type="text" class="form-control" id="title"
+            aria-describedby="emailHelp" placeholder="Enter firstname" required>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Lastname</label>
+        <input ngModel #lastname="ngModel" name="lastname" type="text" class="form-control" id="title"
+            aria-describedby="emailHelp" placeholder="Enter lastname" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Salary</label>
+        <input ngModel #salary="ngModel" name="salary" type="text" class="form-control" id="title"
+            aria-describedby="emailHelp" placeholder="Enter salary" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message1">State</label>
+        <input ngModel #state="ngModel" name="state" type="text" class="form-control" id="message1"
+            placeholder="Enter State" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message2">Country</label>
+        <input ngModel #country="ngModel" name="country" type="text" class="form-control" id="message2"
+            placeholder="Enter State" required>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid"
+        (click)="createEmployee(form.value)">Submit</button>
+
+</form>

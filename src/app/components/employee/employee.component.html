@@ -1,0 +1,36 @@
+<h1 class=" mx-auto" style=width:200px;> Edit An Employee</h1>
+<form #form="ngForm">
+    <div class="form-group">
+        <label for="title">Firstname</label>
+        <input ngModel #firstname="ngModel" [value]="[employee.firstname]" name="firstname" type="text"
+            class="form-control" id="title" aria-describedby="emailHelp" placeholder="Enter firstname" required>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Lastname</label>
+        <input ngModel #lastname="ngModel" [value]="employee.lastname" name="lastname" type="text" class="form-control"
+            id="title" aria-describedby="emailHelp" placeholder="Enter lastname" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Salary</label>
+        <input ngModel #salary="ngModel" [value]="employee.salary" name="salary" type="text" class="form-control"
+            id="title" aria-describedby="emailHelp" placeholder="Enter salary" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message1">State</label>
+        <input ngModel #state="ngModel" [value]="employee.state" name="state" type="text" class="form-control"
+            id="message1" placeholder="Enter State" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message2">Country</label>
+        <input ngModel #country="ngModel" [value]="employee.country" name="country" type="text" class="form-control"
+            id="message2" placeholder="Enter State" required>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid"
+        (click)="updateEmployee(form.value)">Update</button>
+    <button type="submit" class="btn btn-danger" (click)="deleteEmployee()">Delete</button>
+</form>
